@@ -37,8 +37,8 @@
   .options { display: flex; flex-direction: column; gap: 7px; }
   .option-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 14px; border-radius: 8px; border: 1.5px solid rgba(45,74,62,0.18); cursor: pointer; transition: all 0.15s ease; background: rgba(255,255,255,0.45); }
   .option-item:hover { background: rgba(200,168,75,0.12); border-color: var(--gold); }
-  .option-item input { flex-shrink: 0; margin-top: 2px; accent-color: var(--moss); width: 15px; height: 15px; }
-  .option-item label { font-size: 13.5px; color: var(--forest); cursor: pointer; line-height: 1.4; }
+  .option-item input { flex-shrink: 0; margin-top: 2px; accent-color: var(--moss); width: 15px; height: 15px; pointer-events: none; }
+  .option-item label { font-size: 13.5px; color: var(--forest); line-height: 1.4; pointer-events: none; }
   .option-item.selected { background: rgba(74,103,65,0.12); border-color: var(--moss); }
 
   .text-input { width: 100%; padding: 11px 14px; border: 1.5px solid rgba(45,74,62,0.2); border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--forest); background: rgba(255,255,255,0.6); outline: none; transition: border-color 0.15s; resize: vertical; }
@@ -113,33 +113,33 @@
       <div class="question">
         <div class="q-label"><span class="q-num">Q1</span>How long have you been backpacking?</div>
         <div class="options">
-          <div class="option-item" onclick="selectRadio(this,'q1','Less than 1 year')"><input type="radio" name="q1" value="Less than 1 year"><label>Less than 1 year</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q1','1–3 years')"><input type="radio" name="q1" value="1–3 years"><label>1–3 years</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q1','3–5 years')"><input type="radio" name="q1" value="3–5 years"><label>3–5 years</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q1','5–10 years')"><input type="radio" name="q1" value="5–10 years"><label>5–10 years</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q1','10+ years')"><input type="radio" name="q1" value="10+ years"><label>10+ years</label></div>
+          <div class="option-item"><input type="radio" name="q1" value="Less than 1 year"><label>Less than 1 year</label></div>
+          <div class="option-item"><input type="radio" name="q1" value="1–3 years"><label>1–3 years</label></div>
+          <div class="option-item"><input type="radio" name="q1" value="3–5 years"><label>3–5 years</label></div>
+          <div class="option-item"><input type="radio" name="q1" value="5–10 years"><label>5–10 years</label></div>
+          <div class="option-item"><input type="radio" name="q1" value="10+ years"><label>10+ years</label></div>
         </div>
       </div>
 
       <div class="question">
         <div class="q-label"><span class="q-num">Q2</span>What type of trips do you primarily take? <em style="font-size:12px;color:var(--stone)">(Select all that apply)</em></div>
         <div class="options">
-          <div class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="q2" value="Weekend trips (1–2 nights)"><label>Weekend trips (1–2 nights)</label></div>
-          <div class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="q2" value="Multi-day trips (3–5 nights)"><label>Multi-day trips (3–5 nights)</label></div>
-          <div class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="q2" value="Extended trips & mountaineering (6+ nights)"><label>Extended trips &amp; mountaineering (6+ nights)</label></div>
-          <div class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="q2" value="Thru-hiking (PCT, AT, CDT)"><label>Thru-hiking (PCT, AT, CDT, etc.)</label></div>
-          <div class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="q2" value="International trekking"><label>International trekking</label></div>
+          <div class="option-item"><input type="checkbox" name="q2" value="Weekend trips (1–2 nights)"><label>Weekend trips (1–2 nights)</label></div>
+          <div class="option-item"><input type="checkbox" name="q2" value="Multi-day trips (3–5 nights)"><label>Multi-day trips (3–5 nights)</label></div>
+          <div class="option-item"><input type="checkbox" name="q2" value="Extended trips & mountaineering (6+ nights)"><label>Extended trips &amp; mountaineering (6+ nights)</label></div>
+          <div class="option-item"><input type="checkbox" name="q2" value="Thru-hiking (PCT, AT, CDT)"><label>Thru-hiking (PCT, AT, CDT, etc.)</label></div>
+          <div class="option-item"><input type="checkbox" name="q2" value="International trekking"><label>International trekking</label></div>
         </div>
       </div>
 
       <div class="question">
         <div class="q-label"><span class="q-num">Q3</span>What is the typical weight you carry (pack + gear + food)?</div>
         <div class="options">
-          <div class="option-item" onclick="selectRadio(this,'q3','Under 20 lbs (ultralight)')"><input type="radio" name="q3" value="Under 20 lbs (ultralight)"><label>Under 20 lbs — ultralight</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q3','20–30 lbs (lightweight)')"><input type="radio" name="q3" value="20–30 lbs (lightweight)"><label>20–30 lbs — lightweight</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q3','30–40 lbs (moderate)')"><input type="radio" name="q3" value="30–40 lbs (moderate)"><label>30–40 lbs — moderate</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q3','40–50 lbs (heavy)')"><input type="radio" name="q3" value="40–50 lbs (heavy)"><label>40–50 lbs — heavy</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q3','50+ lbs (expedition)')"><input type="radio" name="q3" value="50+ lbs (expedition)"><label>50+ lbs — expedition</label></div>
+          <div class="option-item"><input type="radio" name="q3" value="Under 20 lbs (ultralight)"><label>Under 20 lbs — ultralight</label></div>
+          <div class="option-item"><input type="radio" name="q3" value="20–30 lbs (lightweight)"><label>20–30 lbs — lightweight</label></div>
+          <div class="option-item"><input type="radio" name="q3" value="30–40 lbs (moderate)"><label>30–40 lbs — moderate</label></div>
+          <div class="option-item"><input type="radio" name="q3" value="40–50 lbs (heavy)"><label>40–50 lbs — heavy</label></div>
+          <div class="option-item"><input type="radio" name="q3" value="50+ lbs (expedition)"><label>50+ lbs — expedition</label></div>
         </div>
       </div>
     </div>
@@ -150,37 +150,37 @@
       <div class="question">
         <div class="q-label"><span class="q-num">Q4</span>How satisfied are you with how your current backpack fits your body?</div>
         <div class="options">
-          <div class="option-item" onclick="selectRadio(this,'q4','Very satisfied — fits perfectly')"><input type="radio" name="q4" value="Very satisfied — fits perfectly"><label>Very satisfied — fits perfectly</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q4','Satisfied — fits well with minor adjustments')"><input type="radio" name="q4" value="Satisfied — fits well with minor adjustments"><label>Satisfied — fits well with minor adjustments</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q4','Neutral — okay but not ideal')"><input type="radio" name="q4" value="Neutral — okay but not ideal"><label>Neutral — it's okay but not ideal</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q4','Dissatisfied — noticeable fit issues')"><input type="radio" name="q4" value="Dissatisfied — noticeable fit issues"><label>Dissatisfied — noticeable fit issues</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q4','Very dissatisfied — doesn't fit well')"><input type="radio" name="q4" value="Very dissatisfied — doesn't fit well"><label>Very dissatisfied — doesn't fit well at all</label></div>
+          <div class="option-item"><input type="radio" name="q4" value="Very satisfied — fits perfectly"><label>Very satisfied — fits perfectly</label></div>
+          <div class="option-item"><input type="radio" name="q4" value="Satisfied — fits well with minor adjustments"><label>Satisfied — fits well with minor adjustments</label></div>
+          <div class="option-item"><input type="radio" name="q4" value="Neutral — okay but not ideal"><label>Neutral — it's okay but not ideal</label></div>
+          <div class="option-item"><input type="radio" name="q4" value="Dissatisfied — noticeable fit issues"><label>Dissatisfied — noticeable fit issues</label></div>
+          <div class="option-item"><input type="radio" name="q4" value="Very dissatisfied — doesn't fit well"><label>Very dissatisfied — doesn't fit well at all</label></div>
         </div>
       </div>
 
       <div class="question">
         <div class="q-label"><span class="q-num">Q5</span>Have you experienced any of the following fit issues? <em style="font-size:12px;color:var(--stone)">(Select all that apply)</em></div>
         <div class="options">
-          <div class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="q5" value="Shoulder pain or pressure points"><label>Shoulder pain or pressure points</label></div>
-          <div class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="q5" value="Neck pain or discomfort"><label>Neck pain or discomfort</label></div>
-          <div class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="q5" value="Hip belt doesn't sit correctly"><label>Hip belt doesn't sit correctly on hips</label></div>
-          <div class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="q5" value="Pack too long or short for torso"><label>Pack is too long or short for my torso</label></div>
-          <div class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="q5" value="Shoulder straps too wide or narrow"><label>Shoulder straps too wide or narrow</label></div>
-          <div class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="q5" value="Pack rides too high or low"><label>Pack rides too high or low on my back</label></div>
-          <div class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="q5" value="Weight distribution uneven"><label>Weight distribution feels uneven</label></div>
-          <div class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="q5" value="Hip belt gaps or doesn't make full contact"><label>Hip belt gaps or doesn't make full contact</label></div>
-          <div class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="q5" value="Back panel doesn't match spine curve"><label>Back panel doesn't match my spine curve</label></div>
-          <div class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="q5" value="None of the above"><label>None of the above</label></div>
+          <div class="option-item"><input type="checkbox" name="q5" value="Shoulder pain or pressure points"><label>Shoulder pain or pressure points</label></div>
+          <div class="option-item"><input type="checkbox" name="q5" value="Neck pain or discomfort"><label>Neck pain or discomfort</label></div>
+          <div class="option-item"><input type="checkbox" name="q5" value="Hip belt doesn't sit correctly"><label>Hip belt doesn't sit correctly on hips</label></div>
+          <div class="option-item"><input type="checkbox" name="q5" value="Pack too long or short for torso"><label>Pack is too long or short for my torso</label></div>
+          <div class="option-item"><input type="checkbox" name="q5" value="Shoulder straps too wide or narrow"><label>Shoulder straps too wide or narrow</label></div>
+          <div class="option-item"><input type="checkbox" name="q5" value="Pack rides too high or low"><label>Pack rides too high or low on my back</label></div>
+          <div class="option-item"><input type="checkbox" name="q5" value="Weight distribution uneven"><label>Weight distribution feels uneven</label></div>
+          <div class="option-item"><input type="checkbox" name="q5" value="Hip belt gaps or doesn't make full contact"><label>Hip belt gaps or doesn't make full contact</label></div>
+          <div class="option-item"><input type="checkbox" name="q5" value="Back panel doesn't match spine curve"><label>Back panel doesn't match my spine curve</label></div>
+          <div class="option-item"><input type="checkbox" name="q5" value="None of the above"><label>None of the above</label></div>
         </div>
       </div>
 
       <div class="question">
         <div class="q-label"><span class="q-num">Q6</span>Have you ever experienced pain or injury caused or worsened by a poorly fitting backpack?</div>
         <div class="options">
-          <div class="option-item" onclick="selectRadio(this,'q6','Yes, multiple times')"><input type="radio" name="q6" value="Yes, multiple times"><label>Yes, multiple times</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q6','Yes, once or twice')"><input type="radio" name="q6" value="Yes, once or twice"><label>Yes, once or twice</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q6','Maybe / not sure')"><input type="radio" name="q6" value="Maybe / not sure"><label>Maybe / not sure</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q6','No, never')"><input type="radio" name="q6" value="No, never"><label>No, never</label></div>
+          <div class="option-item"><input type="radio" name="q6" value="Yes, multiple times"><label>Yes, multiple times</label></div>
+          <div class="option-item"><input type="radio" name="q6" value="Yes, once or twice"><label>Yes, once or twice</label></div>
+          <div class="option-item"><input type="radio" name="q6" value="Maybe / not sure"><label>Maybe / not sure</label></div>
+          <div class="option-item"><input type="radio" name="q6" value="No, never"><label>No, never</label></div>
         </div>
       </div>
     </div>
@@ -191,12 +191,12 @@
       <div class="question">
         <div class="q-label"><span class="q-num">Q7</span>How many backpacks did you try before finding one that worked?</div>
         <div class="options">
-          <div class="option-item" onclick="selectRadio(this,'q7','1 — first one worked great')"><input type="radio" name="q7" value="1 — first one worked great"><label>1 — first one worked great</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q7','2–3')"><input type="radio" name="q7" value="2–3"><label>2–3</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q7','4–5')"><input type="radio" name="q7" value="4–5"><label>4–5</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q7','6–10')"><input type="radio" name="q7" value="6–10"><label>6–10</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q7','More than 10')"><input type="radio" name="q7" value="More than 10"><label>More than 10</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q7','Still haven't found one that works')"><input type="radio" name="q7" value="Still haven't found one that works"><label>Still haven't found one that works well</label></div>
+          <div class="option-item"><input type="radio" name="q7" value="1 — first one worked great"><label>1 — first one worked great</label></div>
+          <div class="option-item"><input type="radio" name="q7" value="2–3"><label>2–3</label></div>
+          <div class="option-item"><input type="radio" name="q7" value="4–5"><label>4–5</label></div>
+          <div class="option-item"><input type="radio" name="q7" value="6–10"><label>6–10</label></div>
+          <div class="option-item"><input type="radio" name="q7" value="More than 10"><label>More than 10</label></div>
+          <div class="option-item"><input type="radio" name="q7" value="Still haven't found one that works"><label>Still haven't found one that works well</label></div>
         </div>
       </div>
 
@@ -204,12 +204,12 @@
         <div class="q-label"><span class="q-num">Q8</span>How much MORE would you pay to have a pack adjusted to fit your body significantly better and reduce injury risk — vs. a standard $250 backpack?</div>
         <div class="hint">Think of this like a personalized insole for your shoes — not a fully custom shoe, but a precision-fitted insole that makes your shoe fit better and feel more comfortable.</div>
         <div class="options">
-          <div class="option-item" onclick="selectRadio(this,'q8','I wouldn't pay more')"><input type="radio" name="q8" value="I wouldn't pay more"><label>I wouldn't pay more</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q8','$25–$50 more ($275–$300 total)')"><input type="radio" name="q8" value="$25–$50 more ($275–$300 total)"><label>$25–$50 more ($275–$300 total)</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q8','$50–$100 more ($300–$350 total)')"><input type="radio" name="q8" value="$50–$100 more ($300–$350 total)"><label>$50–$100 more ($300–$350 total)</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q8','$100–$150 more ($350–$400 total)')"><input type="radio" name="q8" value="$100–$150 more ($350–$400 total)"><label>$100–$150 more ($350–$400 total)</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q8','$150–$250 more ($400–$500 total)')"><input type="radio" name="q8" value="$150–$250 more ($400–$500 total)"><label>$150–$250 more ($400–$500 total)</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q8','$250+ more ($500+ total)')"><input type="radio" name="q8" value="$250+ more ($500+ total)"><label>$250+ more ($500+ total)</label></div>
+          <div class="option-item"><input type="radio" name="q8" value="I wouldn't pay more"><label>I wouldn't pay more</label></div>
+          <div class="option-item"><input type="radio" name="q8" value="$25–$50 more ($275–$300 total)"><label>$25–$50 more ($275–$300 total)</label></div>
+          <div class="option-item"><input type="radio" name="q8" value="$50–$100 more ($300–$350 total)"><label>$50–$100 more ($300–$350 total)</label></div>
+          <div class="option-item"><input type="radio" name="q8" value="$100–$150 more ($350–$400 total)"><label>$100–$150 more ($350–$400 total)</label></div>
+          <div class="option-item"><input type="radio" name="q8" value="$150–$250 more ($400–$500 total)"><label>$150–$250 more ($400–$500 total)</label></div>
+          <div class="option-item"><input type="radio" name="q8" value="$250+ more ($500+ total)"><label>$250+ more ($500+ total)</label></div>
         </div>
       </div>
     </div>
@@ -218,8 +218,8 @@
       <h3>That's Part 1 done! 🎉</h3>
       <p>Would you answer a few more questions? (~3 more minutes — helps us design gear that actually works for real bodies on real trails.)</p>
       <div class="btn-row">
-        <button class="btn-primary" onclick="showSection('sec-part2')">Yes, continue to Part 2 →</button>
-        <button class="btn-secondary" onclick="showSection('sec-followup')">No thanks</button>
+        <button type="button" class="btn-primary" onclick="showSection('sec-part2')">Yes, continue to Part 2 →</button>
+        <button type="button" class="btn-secondary" onclick="showSection('sec-followup')">No thanks</button>
       </div>
     </div>
   </div>
@@ -238,27 +238,27 @@
       <div class="question">
         <div class="q-label"><span class="q-num">Q10</span>What brand is your primary backpacking pack?</div>
         <div class="options">
-          <div class="option-item" onclick="selectRadio(this,'q10','Osprey')"><input type="radio" name="q10" value="Osprey"><label>Osprey</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q10','Gregory')"><input type="radio" name="q10" value="Gregory"><label>Gregory</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q10','Deuter')"><input type="radio" name="q10" value="Deuter"><label>Deuter</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q10','REI Co-op')"><input type="radio" name="q10" value="REI Co-op"><label>REI Co-op</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q10','The North Face')"><input type="radio" name="q10" value="The North Face"><label>The North Face</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q10','ULA')"><input type="radio" name="q10" value="ULA"><label>ULA (Ultralight Adventure Equipment)</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q10','Hyperlite Mountain Gear')"><input type="radio" name="q10" value="Hyperlite Mountain Gear"><label>Hyperlite Mountain Gear</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q10','Granite Gear')"><input type="radio" name="q10" value="Granite Gear"><label>Granite Gear</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q10','Zpacks')"><input type="radio" name="q10" value="Zpacks"><label>Zpacks</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q10','Other')"><input type="radio" name="q10" value="Other"><label>Other: <input type="text" id="q10-other" placeholder="Brand name" style="border:none;border-bottom:1px solid var(--stone);background:transparent;width:140px;font-size:13px;outline:none;padding:0 4px;"></label></div>
+          <div class="option-item"><input type="radio" name="q10" value="Osprey"><label>Osprey</label></div>
+          <div class="option-item"><input type="radio" name="q10" value="Gregory"><label>Gregory</label></div>
+          <div class="option-item"><input type="radio" name="q10" value="Deuter"><label>Deuter</label></div>
+          <div class="option-item"><input type="radio" name="q10" value="REI Co-op"><label>REI Co-op</label></div>
+          <div class="option-item"><input type="radio" name="q10" value="The North Face"><label>The North Face</label></div>
+          <div class="option-item"><input type="radio" name="q10" value="ULA"><label>ULA (Ultralight Adventure Equipment)</label></div>
+          <div class="option-item"><input type="radio" name="q10" value="Hyperlite Mountain Gear"><label>Hyperlite Mountain Gear</label></div>
+          <div class="option-item"><input type="radio" name="q10" value="Granite Gear"><label>Granite Gear</label></div>
+          <div class="option-item"><input type="radio" name="q10" value="Zpacks"><label>Zpacks</label></div>
+          <div class="option-item"><input type="radio" name="q10" value="Other"><label>Other: <input type="text" id="q10-other" placeholder="Brand name" style="border:none;border-bottom:1px solid var(--stone);background:transparent;width:140px;font-size:13px;outline:none;padding:0 4px;"></label></div>
         </div>
       </div>
 
       <div class="question">
         <div class="q-label"><span class="q-num">Q11</span>What is the capacity of your pack?</div>
         <div class="options">
-          <div class="option-item" onclick="selectRadio(this,'q11','Under 40L')"><input type="radio" name="q11" value="Under 40L"><label>Under 40L</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q11','40–50L')"><input type="radio" name="q11" value="40–50L"><label>40–50L</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q11','50–65L')"><input type="radio" name="q11" value="50–65L"><label>50–65L</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q11','65–75L')"><input type="radio" name="q11" value="65–75L"><label>65–75L</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q11','75L+')"><input type="radio" name="q11" value="75L+"><label>75L+</label></div>
+          <div class="option-item"><input type="radio" name="q11" value="Under 40L"><label>Under 40L</label></div>
+          <div class="option-item"><input type="radio" name="q11" value="40–50L"><label>40–50L</label></div>
+          <div class="option-item"><input type="radio" name="q11" value="50–65L"><label>50–65L</label></div>
+          <div class="option-item"><input type="radio" name="q11" value="65–75L"><label>65–75L</label></div>
+          <div class="option-item"><input type="radio" name="q11" value="75L+"><label>75L+</label></div>
         </div>
       </div>
     </div>
@@ -270,32 +270,32 @@
         <div class="q-label"><span class="q-num">Q12</span>When shopping for your current pack, what did you do? <em style="font-size:12px;color:var(--stone)">(Select all that apply)</em></div>
         <div class="options">
           <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone);padding:4px 0;font-weight:500;">In-Store</div>
-          <div class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="q12" value="Tried on with weight loaded"><label>Tried on packs with weight loaded in them</label></div>
-          <div class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="q12" value="Tried on without weight"><label>Tried on packs without weight</label></div>
-          <div class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="q12" value="Worked with store employee for fitting"><label>Worked with a store employee to get fitted</label></div>
+          <div class="option-item"><input type="checkbox" name="q12" value="Tried on with weight loaded"><label>Tried on packs with weight loaded in them</label></div>
+          <div class="option-item"><input type="checkbox" name="q12" value="Tried on without weight"><label>Tried on packs without weight</label></div>
+          <div class="option-item"><input type="checkbox" name="q12" value="Worked with store employee for fitting"><label>Worked with a store employee to get fitted</label></div>
           <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone);padding:8px 0 4px;font-weight:500;">Online</div>
-          <div class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="q12" value="Read reviews extensively"><label>Read reviews extensively</label></div>
-          <div class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="q12" value="Watched YouTube / tutorials"><label>Watched YouTube / tutorials</label></div>
-          <div class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="q12" value="Bought online without trying on"><label>Bought online without trying on first</label></div>
-          <div class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="q12" value="Bought based on brand reputation"><label>Bought based on brand reputation alone</label></div>
+          <div class="option-item"><input type="checkbox" name="q12" value="Read reviews extensively"><label>Read reviews extensively</label></div>
+          <div class="option-item"><input type="checkbox" name="q12" value="Watched YouTube / tutorials"><label>Watched YouTube / tutorials</label></div>
+          <div class="option-item"><input type="checkbox" name="q12" value="Bought online without trying on"><label>Bought online without trying on first</label></div>
+          <div class="option-item"><input type="checkbox" name="q12" value="Bought based on brand reputation"><label>Bought based on brand reputation alone</label></div>
           <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone);padding:8px 0 4px;font-weight:500;">Other</div>
-          <div class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="q12" value="Asked friends / community"><label>Asked friends / community for recommendations</label></div>
-          <div class="option-item" onclick="toggleCheck(this)"><input type="checkbox" name="q12" value="Bought whatever was on sale"><label>Bought whatever was on sale or available</label></div>
+          <div class="option-item"><input type="checkbox" name="q12" value="Asked friends / community"><label>Asked friends / community for recommendations</label></div>
+          <div class="option-item"><input type="checkbox" name="q12" value="Bought whatever was on sale"><label>Bought whatever was on sale or available</label></div>
         </div>
       </div>
 
       <div class="question">
         <div class="q-label"><span class="q-num">Q13</span>What were the most frustrating parts of finding the right backpack? <em style="font-size:12px;color:var(--stone)">(Select up to 3)</em></div>
         <div class="options">
-          <div class="option-item" onclick="toggleCheckLimit(this,'q13',3)"><input type="checkbox" name="q13" value="Limited size options (S/M/L only)"><label>Limited size options (mostly S/M/L only)</label></div>
-          <div class="option-item" onclick="toggleCheckLimit(this,'q13',3)"><input type="checkbox" name="q13" value="Difficulty understanding proper fit"><label>Difficulty understanding what "proper fit" should feel like</label></div>
-          <div class="option-item" onclick="toggleCheckLimit(this,'q13',3)"><input type="checkbox" name="q13" value="Too expensive to try multiple packs"><label>Too expensive to try multiple packs ($200–400 each)</label></div>
-          <div class="option-item" onclick="toggleCheckLimit(this,'q13',3)"><input type="checkbox" name="q13" value="Can't test with real weight before buying"><label>Can't test with real weight / real conditions before buying</label></div>
-          <div class="option-item" onclick="toggleCheckLimit(this,'q13',3)"><input type="checkbox" name="q13" value="Conflicting info from different sources"><label>Conflicting info from different sources</label></div>
-          <div class="option-item" onclick="toggleCheckLimit(this,'q13',3)"><input type="checkbox" name="q13" value="Gender-specific packs don't fit my body"><label>Gender-specific packs don't actually fit my body</label></div>
-          <div class="option-item" onclick="toggleCheckLimit(this,'q13',3)"><input type="checkbox" name="q13" value="Takes too long to break in"><label>Takes too long to break in / adjust to new pack</label></div>
-          <div class="option-item" onclick="toggleCheckLimit(this,'q13',3)"><input type="checkbox" name="q13" value="Not enough options for my body type"><label>Not enough options for my body type</label></div>
-          <div class="option-item" onclick="toggleCheckLimit(this,'q13',3)"><input type="checkbox" name="q13" value="Nothing was particularly frustrating"><label>Nothing was particularly frustrating</label></div>
+          <div class="option-item" data-limit="3"><input type="checkbox" name="q13" value="Limited size options (S/M/L only)"><label>Limited size options (mostly S/M/L only)</label></div>
+          <div class="option-item" data-limit="3"><input type="checkbox" name="q13" value="Difficulty understanding proper fit"><label>Difficulty understanding what "proper fit" should feel like</label></div>
+          <div class="option-item" data-limit="3"><input type="checkbox" name="q13" value="Too expensive to try multiple packs"><label>Too expensive to try multiple packs ($200–400 each)</label></div>
+          <div class="option-item" data-limit="3"><input type="checkbox" name="q13" value="Can't test with real weight before buying"><label>Can't test with real weight / real conditions before buying</label></div>
+          <div class="option-item" data-limit="3"><input type="checkbox" name="q13" value="Conflicting info from different sources"><label>Conflicting info from different sources</label></div>
+          <div class="option-item" data-limit="3"><input type="checkbox" name="q13" value="Gender-specific packs don't fit my body"><label>Gender-specific packs don't actually fit my body</label></div>
+          <div class="option-item" data-limit="3"><input type="checkbox" name="q13" value="Takes too long to break in"><label>Takes too long to break in / adjust to new pack</label></div>
+          <div class="option-item" data-limit="3"><input type="checkbox" name="q13" value="Not enough options for my body type"><label>Not enough options for my body type</label></div>
+          <div class="option-item" data-limit="3"><input type="checkbox" name="q13" value="Nothing was particularly frustrating"><label>Nothing was particularly frustrating</label></div>
         </div>
       </div>
     </div>
@@ -325,7 +325,7 @@
       </div>
     </div>
 
-    <button class="btn-primary" onclick="showSection('sec-followup')" style="margin-bottom:16px">Continue →</button>
+    <button type="button" class="btn-primary" onclick="showSection('sec-followup')" style="margin-bottom:16px">Continue →</button>
   </div>
 
   <!-- FOLLOW UP -->
@@ -335,9 +335,9 @@
       <div class="question">
         <div class="q-label"><span class="q-num">Q16</span>Would you be open to a 15-minute conversation about your backpack experience?</div>
         <div class="options">
-          <div class="option-item" onclick="selectRadio(this,'q16','Yes, I am interested')"><input type="radio" name="q16" value="Yes, I am interested"><label>Yes, I'm interested</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q16','Maybe, depending on timing')"><input type="radio" name="q16" value="Maybe, depending on timing"><label>Maybe, depending on timing</label></div>
-          <div class="option-item" onclick="selectRadio(this,'q16','No thanks')"><input type="radio" name="q16" value="No thanks"><label>No thanks</label></div>
+          <div class="option-item"><input type="radio" name="q16" value="Yes, I am interested"><label>Yes, I'm interested</label></div>
+          <div class="option-item"><input type="radio" name="q16" value="Maybe, depending on timing"><label>Maybe, depending on timing</label></div>
+          <div class="option-item"><input type="radio" name="q16" value="No thanks"><label>No thanks</label></div>
         </div>
       </div>
       <div id="contact-fields" style="display:none;margin-top:16px">
@@ -347,7 +347,7 @@
         </div>
         <p style="font-size:11.5px;color:var(--stone);margin-top:8px;font-style:italic">Contact info used only for follow-up and kept confidential.</p>
       </div>
-      <button class="btn-primary" id="submit-btn" onclick="submitSurvey()" style="margin-top:16px">Submit Survey ✓</button>
+      <button type="button" class="btn-primary" id="submit-btn" onclick="submitSurvey()" style="margin-top:16px">Submit Survey ✓</button>
       <div class="submit-status" id="submit-status"></div>
     </div>
   </div>
@@ -364,127 +364,150 @@
 </div>
 
 <script>
-  // ── REPLACE THIS WITH YOUR APPS SCRIPT WEB APP URL ──
   const SCRIPT_URL = https://script.google.com/macros/s/AKfycbxqL-xeeBMLRChDKTbvYkmrwx_cOxX393j_O4qcN2xh-JK4xWfD8d4nojuhbKJ2415c/exec;
 
-  // Collect all answers into one object
+  // ── Fix #2: Section navigation — exposed globally ──
+  function showSection(id) {
+    document.querySelectorAll('.survey-section').forEach(function(s) {
+      s.classList.remove('active');
+    });
+    var target = document.getElementById(id);
+    if (target) {
+      target.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  // ── Fix #1: Click-anywhere on option boxes ──
+  // pointer-events:none on inputs/labels (set in CSS) means all clicks
+  // hit the .option-item div. We delegate from each .options container.
+  document.addEventListener('DOMContentLoaded', function() {
+
+    document.querySelectorAll('.options').forEach(function(container) {
+      container.addEventListener('click', function(e) {
+        var item = e.target.closest('.option-item');
+        if (!item) return;
+
+        // Don't interfere with the text input in Q10 "Other"
+        if (e.target.tagName === 'INPUT' && e.target.type === 'text') return;
+
+        var radio    = item.querySelector('input[type="radio"]');
+        var checkbox = item.querySelector('input[type="checkbox"]');
+
+        if (radio) {
+          // Deselect all options in this radio group
+          document.querySelectorAll('input[name="' + radio.name + '"]').forEach(function(inp) {
+            inp.closest('.option-item').classList.remove('selected');
+          });
+          radio.checked = true;
+          item.classList.add('selected');
+
+          // Show/hide contact fields for Q16
+          if (radio.name === 'q16') {
+            var show = radio.value.startsWith('Yes') || radio.value.startsWith('Maybe');
+            document.getElementById('contact-fields').style.display = show ? 'block' : 'none';
+          }
+        }
+
+        if (checkbox) {
+          var limit = item.dataset.limit ? parseInt(item.dataset.limit) : null;
+          if (!checkbox.checked && limit) {
+            var checkedCount = document.querySelectorAll('input[name="' + checkbox.name + '"]:checked').length;
+            if (checkedCount >= limit) return; // at limit, block
+          }
+          checkbox.checked = !checkbox.checked;
+          item.classList.toggle('selected', checkbox.checked);
+        }
+      });
+    });
+
+    // ── Drag-to-rank ──
+    var rankList = document.getElementById('rank-list');
+    if (rankList) {
+      var dragSrc = null;
+      rankList.addEventListener('dragstart', function(e) {
+        dragSrc = e.target.closest('.rank-item');
+        if (dragSrc) dragSrc.style.opacity = '0.5';
+      });
+      rankList.addEventListener('dragend', function(e) {
+        var item = e.target.closest('.rank-item');
+        if (item) item.style.opacity = '';
+        updateRankNumbers();
+      });
+      rankList.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        var target = e.target.closest('.rank-item');
+        if (target && target !== dragSrc) {
+          var rect = target.getBoundingClientRect();
+          rankList.insertBefore(dragSrc, e.clientY < rect.top + rect.height / 2 ? target : target.nextSibling);
+        }
+      });
+    }
+  });
+
+  function updateRankNumbers() {
+    document.querySelectorAll('#rank-list .rank-item').forEach(function(item, i) {
+      item.querySelector('.rank-num').textContent = i + 1;
+    });
+  }
+
+  // ── Collect all responses ──
   function collectResponses() {
-    const get = (name) => {
-      const el = document.querySelector(`[name="${name}"]:checked`);
+    var get = function(name) {
+      var el = document.querySelector('[name="' + name + '"]:checked');
       return el ? el.value : "";
     };
-    const getMany = (name) => [...document.querySelectorAll(`[name="${name}"]:checked`)].map(el => el.value);
-    const getRanking = () => [...document.querySelectorAll('#rank-list .rank-item')].map(el => el.dataset.val);
-
-    let q10val = get('q10');
+    var getMany = function(name) {
+      return Array.from(document.querySelectorAll('[name="' + name + '"]:checked')).map(function(el) { return el.value; });
+    };
+    var getRanking = function() {
+      return Array.from(document.querySelectorAll('#rank-list .rank-item')).map(function(el) { return el.dataset.val; });
+    };
+    var q10val = get('q10');
     if (q10val === 'Other') {
-      const other = document.getElementById('q10-other').value.trim();
-      if (other) q10val = 'Other: ' + other;
+      var other = document.getElementById('q10-other');
+      if (other && other.value.trim()) q10val = 'Other: ' + other.value.trim();
     }
-
     return {
-      q1:    get('q1'),
-      q2:    getMany('q2'),
-      q3:    get('q3'),
-      q4:    get('q4'),
-      q5:    getMany('q5'),
-      q6:    get('q6'),
-      q7:    get('q7'),
-      q8:    get('q8'),
-      q10:   q10val,
-      q11:   get('q11'),
-      q12:   getMany('q12'),
-      q13:   getMany('q13'),
-      q14:   getRanking(),
-      q15:   document.getElementById('q15-text')?.value || "",
-      q16:   get('q16'),
-      name:  document.getElementById('contact-name')?.value || "",
-      email: document.getElementById('contact-email')?.value || ""
+      q1: get('q1'), q2: getMany('q2'), q3: get('q3'),
+      q4: get('q4'), q5: getMany('q5'), q6: get('q6'),
+      q7: get('q7'), q8: get('q8'), q10: q10val,
+      q11: get('q11'), q12: getMany('q12'), q13: getMany('q13'),
+      q14: getRanking(),
+      q15: (document.getElementById('q15-text') || {}).value || "",
+      q16: get('q16'),
+      name:  (document.getElementById('contact-name')  || {}).value || "",
+      email: (document.getElementById('contact-email') || {}).value || ""
     };
   }
 
+  // ── Submit ──
   async function submitSurvey() {
-    const btn = document.getElementById('submit-btn');
-    const status = document.getElementById('submit-status');
-
+    var btn    = document.getElementById('submit-btn');
+    var status = document.getElementById('submit-status');
     btn.disabled = true;
     btn.textContent = 'Submitting…';
     status.textContent = '';
     status.className = 'submit-status';
-
-    const data = collectResponses();
-
-    // If URL not set yet, go straight to thank you (dev mode)
+    var data = collectResponses();
     if (SCRIPT_URL === "PASTE_YOUR_SCRIPT_URL_HERE") {
-      console.log("Survey data (dev mode):", data);
+      console.log("Dev mode — response data:", data);
       showSection('sec-thankyou');
       return;
     }
-
     try {
       await fetch(SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors', // Required for Apps Script
+        method: 'POST', mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       });
-      // no-cors means we can't read response, but if no error was thrown it succeeded
       showSection('sec-thankyou');
     } catch (err) {
       btn.disabled = false;
       btn.textContent = 'Submit Survey ✓';
       status.textContent = 'Something went wrong — please try again.';
       status.className = 'submit-status error';
-      console.error(err);
     }
-  }
-
-  function selectRadio(el, name, val) {
-    document.querySelectorAll(`[name="${name}"]`).forEach(inp => inp.closest('.option-item').classList.remove('selected'));
-    el.classList.add('selected');
-    el.querySelector('input').checked = true;
-    if (name === 'q16' && (val.startsWith('Yes') || val.startsWith('Maybe'))) {
-      document.getElementById('contact-fields').style.display = 'block';
-    } else if (name === 'q16') {
-      document.getElementById('contact-fields').style.display = 'none';
-    }
-  }
-
-  function toggleCheck(el) {
-    const cb = el.querySelector('input[type="checkbox"]');
-    cb.checked = !cb.checked;
-    el.classList.toggle('selected', cb.checked);
-  }
-
-  function toggleCheckLimit(el, name, limit) {
-    const cb = el.querySelector('input[type="checkbox"]');
-    const checked = document.querySelectorAll(`[name="${name}"]:checked`);
-    if (!cb.checked && checked.length >= limit) return;
-    cb.checked = !cb.checked;
-    el.classList.toggle('selected', cb.checked);
-  }
-
-  function showSection(id) {
-    document.querySelectorAll('.survey-section').forEach(s => s.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  }
-
-  // Drag-to-rank
-  const rankList = document.getElementById('rank-list');
-  let dragSrc = null;
-  rankList.addEventListener('dragstart', e => { dragSrc = e.target.closest('.rank-item'); dragSrc.style.opacity = '0.5'; });
-  rankList.addEventListener('dragend', e => { e.target.closest('.rank-item').style.opacity = ''; updateRankNumbers(); });
-  rankList.addEventListener('dragover', e => {
-    e.preventDefault();
-    const target = e.target.closest('.rank-item');
-    if (target && target !== dragSrc) {
-      const rect = target.getBoundingClientRect();
-      rankList.insertBefore(dragSrc, e.clientY < rect.top + rect.height / 2 ? target : target.nextSibling);
-    }
-  });
-  function updateRankNumbers() {
-    rankList.querySelectorAll('.rank-item').forEach((item, i) => item.querySelector('.rank-num').textContent = i + 1);
   }
 </script>
 </body>
