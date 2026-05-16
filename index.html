@@ -37,8 +37,8 @@
   .options { display: flex; flex-direction: column; gap: 7px; }
   .option-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 14px; border-radius: 8px; border: 1.5px solid rgba(45,74,62,0.18); cursor: pointer; transition: all 0.15s ease; background: rgba(255,255,255,0.45); }
   .option-item:hover { background: rgba(200,168,75,0.12); border-color: var(--gold); }
-  .option-item input { flex-shrink: 0; margin-top: 2px; accent-color: var(--moss); width: 15px; height: 15px; pointer-events: none; }
-  .option-item label { font-size: 13.5px; color: var(--forest); line-height: 1.4; pointer-events: none; }
+  .option-item input { flex-shrink: 0; margin-top: 2px; accent-color: var(--moss); width: 15px; height: 15px; }
+  .option-item label { font-size: 13.5px; color: var(--forest); cursor: pointer; line-height: 1.4; }
   .option-item.selected { background: rgba(74,103,65,0.12); border-color: var(--moss); }
 
   .text-input { width: 100%; padding: 11px 14px; border: 1.5px solid rgba(45,74,62,0.2); border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--forest); background: rgba(255,255,255,0.6); outline: none; transition: border-color 0.15s; resize: vertical; }
@@ -383,19 +383,23 @@
   // hit the .option-item div. We delegate from each .options container.
   document.addEventListener('DOMContentLoaded', function() {
 
-    document.querySelectorAll('.options').forEach(function(container) {
-      container.addEventListener('click', function(e) {
-        var item = e.target.closest('.option-item');
-        if (!item) return;
+    // Attach one click listener per .option-item
+    // e.preventDefault() stops the browser from toggling the input — we do it manually.
+    // This means clicking anywhere in the box (text, circle, padding) all behave identically.
+    document.querySelectorAll('.option-item').forEach(function(item) {
+      item.addEventListener('click', function(e) {
 
-        // Don't interfere with the text input in Q10 "Other"
+        // Let the Q10 "Other" text field work normally
         if (e.target.tagName === 'INPUT' && e.target.type === 'text') return;
+
+        // Take control — prevent browser from double-handling the input
+        e.preventDefault();
 
         var radio    = item.querySelector('input[type="radio"]');
         var checkbox = item.querySelector('input[type="checkbox"]');
 
         if (radio) {
-          // Deselect all options in this radio group
+          // Clear all in this group, then select this one
           document.querySelectorAll('input[name="' + radio.name + '"]').forEach(function(inp) {
             inp.closest('.option-item').classList.remove('selected');
           });
@@ -411,9 +415,9 @@
 
         if (checkbox) {
           var limit = item.dataset.limit ? parseInt(item.dataset.limit) : null;
-          if (!checkbox.checked && limit) {
-            var checkedCount = document.querySelectorAll('input[name="' + checkbox.name + '"]:checked').length;
-            if (checkedCount >= limit) return; // at limit, block
+          if (limit && !checkbox.checked) {
+            var alreadyChecked = document.querySelectorAll('input[name="' + checkbox.name + '"]:checked').length;
+            if (alreadyChecked >= limit) return;
           }
           checkbox.checked = !checkbox.checked;
           item.classList.toggle('selected', checkbox.checked);
